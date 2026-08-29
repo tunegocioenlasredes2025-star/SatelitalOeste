@@ -1,7 +1,7 @@
 import { SITE, NAV } from "./data.mjs";
 import { ICO, marca } from "./icons.mjs";
 
-export const V = "7"; // cache busting de css/js
+export const V = "13"; // cache busting de css/js
 
 export const waLink = (msg) =>
   `https://wa.me/${SITE.wa}?text=${encodeURIComponent(msg)}`;

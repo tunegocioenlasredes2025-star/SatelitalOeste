@@ -2,12 +2,13 @@
    Satelital Oeste — generador del sitio.
    node _build/build.mjs   (desde la carpeta web/)
    ============================================================ */
-import { writeFileSync, mkdirSync } from "node:fs";
+import { writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { SITE, NAV, RUBROS } from "./data.mjs";
-import { ICO, marca } from "./icons.mjs";
+import { SITE } from "./data.mjs";
+import { ICO } from "./icons.mjs";
 import { page, waLink } from "./layout.mjs";
+import { img, fondo, ticker, banda, ctaFinal, applist, pnext, fig, phero } from "./contenido.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -120,99 +121,47 @@ const consola = `
   <p class="console-note">Representación del panel · datos ilustrativos</p>
 </div>`;
 
-/* ---------------- bloques reutilizables ---------------- */
-const ticker = `
-<div class="ticker" aria-hidden="true">
-  <div class="ticker-track">
-    ${[0, 1].map(() => RUBROS.map(r => `<span>${r}</span>`).join("")).join("")}
-  </div>
-</div>`;
-
-const ctaFinal = (titulo, texto) => `
-<section class="section cta-band" id="contacto">
-  <div class="wrap">
-    <div class="contact-grid">
-      <div class="rv">
-        <p class="eyebrow">Pedí tu cotización</p>
-        <h2 style="margin-block:.9rem .85rem">${titulo}</h2>
-        <p class="lead">${texto}</p>
-        <form class="form" id="form-contacto" data-wa="${SITE.wa}" style="margin-top:2rem">
-          <div class="field"><label for="f-nombre">Nombre y apellido</label><input id="f-nombre" name="nombre" type="text" required placeholder="Cómo te llamás"></div>
-          <div class="field"><label for="f-empresa">Empresa</label><input id="f-empresa" name="empresa" type="text" placeholder="Razón social o nombre de fantasía"></div>
-          <div class="field"><label for="f-telefono">Teléfono</label><input id="f-telefono" name="telefono" type="tel" required placeholder="Con característica"></div>
-          <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" placeholder="tucorreo@empresa.com"></div>
-          <div class="field"><label for="f-servicio">Qué necesitás</label>
-            <select id="f-servicio" name="servicio">
-              <option>Manejo de flotas</option>
-              <option>Maquinaria pesada</option>
-              <option>Transporte público</option>
-              <option>Seguimiento de activos</option>
-              <option>Rastreo de personas</option>
-              <option>Todavía no sé, quiero asesoramiento</option>
-            </select>
-          </div>
-          <div class="field"><label for="f-unidades">Unidades a equipar</label><input id="f-unidades" name="unidades" type="text" placeholder="Por ejemplo: 8 camiones"></div>
-          <div class="field"><label for="f-mensaje">Contanos brevemente</label><textarea id="f-mensaje" name="mensaje" placeholder="Qué querés controlar y desde qué zona operás"></textarea></div>
-          <button class="btn btn--pri" type="submit">${ICO.wa} Enviar por WhatsApp</button>
-          <p class="form-note">Se abre WhatsApp con el mensaje ya escrito</p>
-        </form>
-      </div>
-      <div class="rv rv-d1">
-        <p class="eyebrow">Canales directos</p>
-        <h3 style="margin-block:.8rem 1.3rem;font-size:clamp(1.3rem,3.4vw,1.7rem)">Hablá con alguien ahora</h3>
-        <div class="chan">
-          <a href="${SITE.tel0800Href}"><span class="ci">${ICO.tel}</span><span class="cx"><span>Centro de atención</span><b>${SITE.tel0800}</b></span></a>
-          <a href="${waLink("Hola Satelital Oeste, quiero una cotización del servicio de rastreo satelital.")}" target="_blank" rel="noopener"><span class="ci">${ICO.wa}</span><span class="cx"><span>WhatsApp</span><b>${SITE.telBsAs}</b></span></a>
-          <a href="${SITE.telExteriorHref}"><span class="ci">${ICO.globo}</span><span class="cx"><span>Desde el exterior</span><b>${SITE.telExterior}</b></span></a>
-          <a href="mailto:${SITE.mailContacto}"><span class="ci">${ICO.mail}</span><span class="cx"><span>Consultas comerciales</span><b>${SITE.mailContacto}</b></span></a>
-          <a href="mailto:${SITE.mailTecnica}"><span class="ci">${ICO.senal}</span><span class="cx"><span>Soporte técnico</span><b>${SITE.mailTecnica}</b></span></a>
-        </div>
-        <ul class="branch">
-          <li><span>Sucursal</span><b>Buenos Aires</b><p><a href="${SITE.telBsAsHref}">${SITE.telBsAs}</a></p></li>
-          <li><span>Sucursal</span><b>Córdoba</b><p><a href="${SITE.telCbaHref}">${SITE.telCba}</a></p></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>`;
-
-/* ---------------- INICIO ---------------- */
+/* ================= INICIO ================= */
 const SOLS = [
   {
-    ico: ICO.flota, t: "Manejo de flotas", h: "manejo-de-flotas.html",
+    im: "flotas", alt: "Camiones circulando por una autopista de varios carriles",
+    t: "Manejo de flotas", h: "manejo-de-flotas.html",
     p: "La operación completa en un mapa a pantalla completa, para saber en cada instante qué pasa con cada vehículo y ajustar sobre la marcha.",
     li: ["Recorridos y posición en tiempo real", "Estado del vehículo y del conductor", "Taxis, distribución, logística y servicios públicos"]
   },
   {
-    ico: ICO.bus, t: "Transporte público", h: "manejo-de-flotas.html#transporte",
+    im: "transporte", alt: "Colectivo urbano avanzando por una avenida al anochecer",
+    t: "Transporte público", h: "manejo-de-flotas.html#transporte",
     p: "Un sistema de acceso público, didáctico e intuitivo: la empresa gana control del servicio y el pasajero deja de esperar a ciegas.",
     li: ["Vista pública del recorrido", "Herramienta operativa para la empresa", "Servicio más previsible para el usuario"]
   },
   {
-    ico: ICO.activo, t: "Seguimiento de activos", h: "localizacion-activos.html",
+    im: "activos", alt: "Vista aérea de un camión avanzando por una ruta entre el monte",
+    t: "Seguimiento de activos", h: "localizacion-activos.html",
     p: "Rastreadores compactos con batería de larga duración para todo lo que se mueve sin conductor fijo: maquinaria, cargas, motos y equipaje.",
     li: ["Semanas de autonomía con sensor de movimiento", "Se coloca de forma temporal", "Alertas de movimiento al usuario"]
   },
   {
-    ico: ICO.persona, t: "Rastreo de personas", h: "rastreo-de-personas.html",
+    im: "personas", alt: "Trabajador con chaleco reflectivo y casco en una obra",
+    t: "Rastreo de personas", h: "rastreo-de-personas.html",
     p: "El rastreador más chico del mercado, con batería incorporada. Pensado para personal que trabaja solo, fuera de la oficina o de noche.",
     li: ["Más chico que un celular", "Botón de alarma y aviso por inactividad", "También para mascotas y como señuelo en la carga"]
   }
 ];
 
-const ARGS = [
+const COSTOS = [
   { t: "Combustible y kilómetros", p: "Recorrido real contra recorrido previsto. Los desvíos y los kilómetros de más dejan de ser invisibles en la factura del mes." },
   { t: "Tiempos de servicio", p: "Cuánto tarda cada trabajo y cuánto tiempo estuvo la unidad detenida sin operar. Dos números que rara vez alguien tiene." },
   { t: "Horas adicionales", p: "La jornada de cada unidad queda registrada. Se factura y se paga lo que efectivamente se trabajó." },
   { t: "Forma de conducir", p: "El comportamiento al volante impacta directo en el mantenimiento, en la vida útil del vehículo y en el costo por kilómetro." }
 ];
 
-const FEATS = [
-  { i: ICO.mapa, t: "Mapa a pantalla completa, en vivo", p: "Toda la operación en una sola vista, actualizada al instante. La gestión se hace mirando, no llamando." },
-  { i: ICO.senal, t: "Estado del vehículo y del conductor", p: "Las entradas y salidas del equipo reportan información del vehículo, no solamente la posición en el mapa." },
-  { i: ICO.alarma, t: "Alarma automática y botón de pánico", p: "El dispositivo envía la alerta solo ante una eventualidad, y la persona también puede dispararla con un botón." },
-  { i: ICO.reloj, t: "Aviso por inactividad", p: "Si una unidad o una persona queda demasiado tiempo sin moverse, la plataforma lo informa." },
-  { i: ICO.monitor, t: "Acceso web con usuario propio", p: "Cada cliente entra con su clave y ve únicamente sus unidades, desde cualquier navegador y sin instalar nada." }
+const RASGOS = [
+  { t: "Mapa a pantalla completa, en vivo", p: "Toda la operación en una sola vista, actualizada al instante. La gestión se hace mirando, no llamando." },
+  { t: "Estado del vehículo y del conductor", p: "Las entradas y salidas del equipo reportan información del vehículo, no solamente la posición en el mapa." },
+  { t: "Alarma automática y botón de pánico", p: "El dispositivo envía la alerta solo ante una eventualidad, y la persona también puede dispararla con un botón." },
+  { t: "Aviso por inactividad", p: "Si una unidad o una persona queda demasiado tiempo sin moverse, la plataforma lo informa." },
+  { t: "Acceso web con usuario propio", p: "Cada cliente entra con su clave y ve únicamente sus unidades, desde cualquier navegador y sin instalar nada." }
 ];
 
 const PASOS = [
@@ -233,12 +182,13 @@ const FAQ = [
 
 const indexBody = `
 <section class="hero">
+  ${fondo("ruta-noche", "Vista aérea nocturna de una ciudad con el tránsito iluminado", true)}
   <div class="bg-grid"></div>
   <div class="wrap hero-in">
     <div>
       <p class="eyebrow rv">Buenos Aires y Córdoba</p>
       <h1 class="rv rv-d1">Dónde está cada unidad, <span class="hl">ahora mismo</span>.</h1>
-      <p class="lead rv rv-d2">Rastreo y seguimiento en tiempo real para flotas de vehículos, maquinaria pesada, transporte público, activos móviles y personas. Equipos instalados, plataforma propia y soporte técnico de este lado del teléfono.</p>
+      <p class="lead rv rv-d2">Rastreo y seguimiento en tiempo real para flotas, maquinaria pesada, transporte público, activos móviles y personas. Equipos instalados, plataforma propia y soporte técnico de este lado del teléfono.</p>
       <div class="btns rv rv-d3">
         <a class="btn btn--pri" href="${waLink("Hola Satelital Oeste, quiero una cotización del servicio de rastreo satelital.")}" target="_blank" rel="noopener">${ICO.wa} Pedir cotización</a>
         <a class="btn btn--gho" href="#soluciones">Ver soluciones ${ICO.flecha}</a>
@@ -260,10 +210,16 @@ ${ticker}
     <div class="head rv">
       <p class="eyebrow">El punto</p>
       <h2>Una flota que no se mide se termina pagando de más.</h2>
-      <p class="lead">Combustible, horas extras, desvíos y tiempos muertos no aparecen en ninguna planilla hasta que alguien los mide. Un localizador GPS convierte esa zona gris en información concreta, con la que sí se puede decidir.</p>
+      <p class="lead">Combustible, horas extras, desvíos y tiempos muertos no aparecen en ninguna planilla hasta que alguien los mide. Un localizador GPS convierte esa zona gris en información concreta.</p>
     </div>
-    <div class="args">
-      ${ARGS.map((a, i) => `<article class="arg rv rv-d${i}"><span class="num">0${i + 1}</span><h3>${a.t}</h3><p>${a.p}</p></article>`).join("")}
+    <div class="punto">
+      <figure class="punto-img rv">
+        <div class="marco">${img("camiones", "Fila de camiones de carga detenidos esperando para avanzar", "(min-width:960px) 40vw, 100vw")}</div>
+        <figcaption>Cada hora detenida se paga igual</figcaption>
+      </figure>
+      <div class="costos rv rv-d1">
+        ${COSTOS.map((c, i) => `<article class="costo"><span class="n">0${i + 1}</span><h3>${c.t}</h3><p>${c.p}</p></article>`).join("")}
+      </div>
     </div>
   </div>
 </section>
@@ -275,18 +231,25 @@ ${ticker}
       <h2>Cuatro problemas distintos. Un mismo mapa.</h2>
       <p class="lead">No es el mismo equipo el que va en un camión de larga distancia que el que se esconde dentro de una carga. Por eso la solución se arma a medida de lo que hay que controlar.</p>
     </div>
-    <div class="sols">
+    <div class="vias">
       ${SOLS.map((s, i) => `
-      <article class="sol rv rv-d${i % 2}">
-        <span class="ico">${s.ico}</span>
-        <h3>${s.t}</h3>
-        <p>${s.p}</p>
-        <ul>${s.li.map(x => `<li>${x}</li>`).join("")}</ul>
-        <a class="more" href="${s.h}">Ver en detalle ${ICO.flecha}</a>
+      <article class="via rv">
+        <figure class="via-img">
+          ${img(s.im, s.alt, "(min-width:900px) 50vw, 100vw")}
+          <span class="via-n">0${i + 1}</span>
+        </figure>
+        <div class="via-tx">
+          <h3>${s.t}</h3>
+          <p>${s.p}</p>
+          <ul class="pts">${s.li.map(x => `<li>${x}</li>`).join("")}</ul>
+          <a class="via-go" href="${s.h}">Ver en detalle ${ICO.flecha}</a>
+        </div>
       </article>`).join("")}
     </div>
   </div>
 </section>
+
+${banda}
 
 <section class="section paper" id="plataforma">
   <div class="wrap">
@@ -296,9 +259,9 @@ ${ticker}
       <p class="lead">Cada cliente entra con su usuario y ve únicamente sus unidades. Sin llamar a nadie, sin pedir un reporte, sin esperar al lunes.</p>
     </div>
     <div class="plat">
-      <ul class="feat rv">
-        ${FEATS.map(f => `<li><span class="fi">${f.i}</span><div><h4>${f.t}</h4><p>${f.p}</p></div></li>`).join("")}
-      </ul>
+      <div class="rasgos rv">
+        ${RASGOS.map((f, i) => `<article class="rasgo"><span class="n">0${i + 1}</span><h4>${f.t}</h4><p>${f.p}</p></article>`).join("")}
+      </div>
       <div class="rv rv-d1">
         <div class="mock">
           <div class="mock-top"><span class="dots"><i></i><i></i><i></i></span><span class="ttl">Resumen de operación</span></div>
@@ -322,7 +285,7 @@ ${ticker}
           </ul>
         </div>
         <p class="console-note" style="color:#5e7286">Representación del panel · datos ilustrativos</p>
-        <div class="btns" style="margin-top:1.6rem">
+        <div class="btns" style="margin-top:1.5rem">
           <a class="btn btn--ink" href="${SITE.plataforma}" target="_blank" rel="noopener">${ICO.llave} Acceso a clientes</a>
           <a class="btn btn--ghoink" href="contacto.html">Quiero una demo</a>
         </div>
@@ -339,7 +302,7 @@ ${ticker}
       <p class="lead">Cuatro pasos, sin vueltas y sin sorpresas en el medio.</p>
     </div>
     <div class="steps">
-      ${PASOS.map((s, i) => `<article class="step rv rv-d${i % 2}"><h3>${s.t}</h3><p>${s.p}</p></article>`).join("")}
+      ${PASOS.map(s => `<article class="step rv"><h3>${s.t}</h3><p>${s.p}</p></article>`).join("")}
     </div>
   </div>
 </section>
@@ -359,23 +322,20 @@ ${ticker}
 ${ctaFinal("Contanos qué necesitás controlar.", "Dejanos los datos y te armamos la cotización según la cantidad de unidades y el tipo de equipo. Si preferís hablar, el 0800 es gratuito desde todo el país.")}
 `;
 
-/* ---------------- páginas de servicio ---------------- */
-const appItem = (t) => `<li>${ICO.check}<span>${t}</span></li>`;
-
-const pnext = (items) => `
-<div class="pnext">
-  ${items.map(i => `<a href="${i.h}"><span class="px"><span>${i.k}</span><b>${i.t}</b></span>${ICO.flecha}</a>`).join("")}
-</div>`;
+/* ================= MANEJO DE FLOTAS ================= */
+const GANANCIAS = [
+  { b: "Optimizar los tiempos de servicio", p: "Saber cuánto tarda realmente cada trabajo y comparar entre equipos y entre obras." },
+  { b: "Disminuir los tiempos de inactividad", p: "Detectar las horas en las que la máquina estuvo encendida sin producir." },
+  { b: "Reducir la facturación de horas adicionales", p: "La jornada de cada equipo queda registrada. Se factura lo que se trabajó." },
+  { b: "Reducir kilómetros y combustible", p: "Recorridos reales contra recorridos previstos, para cortar el desvío antes de que sea costumbre." },
+  { b: "Bajar gastos de comunicaciones", p: "Menos llamadas para preguntar dónde está la máquina y en qué estado quedó." },
+  { b: "Reducir gastos de personal", p: "Una misma persona puede coordinar más equipos cuando los ve a todos en el mismo mapa." }
+];
 
 const flotasBody = `
-<section class="phero">
-  <div class="bg-grid"></div>
-  <div class="wrap">
-    <p class="crumb"><a href="index.html">Inicio</a> / Manejo de flotas</p>
-    <h1>Gestión de flotas: más eficiencia operativa, menos costo por kilómetro.</h1>
-    <p class="lead">Para muchas empresas, la localización y el estado de la flota es información de importancia vital. Conocer el estatus de los activos móviles afecta directamente la eficiencia y los costos de la operación.</p>
-  </div>
-</section>
+${phero("flotas", "Camiones circulando por una autopista de varios carriles", "Manejo de flotas",
+  "Gestión de flotas: más eficiencia operativa, menos costo por kilómetro.",
+  "Para muchas empresas, la localización y el estado de la flota es información de importancia vital. Conocer el estatus de los activos móviles afecta directamente la eficiencia y los costos de la operación.")}
 
 <section class="section section--tight">
   <div class="wrap">
@@ -384,13 +344,13 @@ const flotasBody = `
       <p>La unidad de rastreo de <strong>Satelital Oeste</strong> es un potente localizador GPS, fácil de integrar en un sistema empresarial ya existente, que entrega en tiempo real información actualizada sobre la localización del vehículo o del activo. Las entradas y salidas del equipo pueden utilizarse para reunir una gran variedad de información sobre el estado del vehículo y del conductor.</p>
     </div>
 
-    <div class="head rv" style="margin-top:3.4rem">
+    ${fig("camiones", "Fila de camiones de carga esperando para avanzar", "Distribución y logística · una de las aplicaciones más frecuentes")}
+
+    <div class="head rv" style="margin-top:3.2rem">
       <p class="eyebrow">Dónde se aplica</p>
       <h2 style="font-size:clamp(1.5rem,4vw,2.1rem)">Rubros donde el sistema ya está trabajando</h2>
     </div>
-    <ul class="applist rv">
-      ${["Taxis y transporte público", "Distribución y logística", "Seguridad vial", "Servicios públicos: electricidad, agua y saneamiento", "Telecomunicaciones", "Construcción", "Seguridad de conductores adolescentes"].map(appItem).join("")}
-    </ul>
+    ${applist(["Taxis y transporte público", "Distribución y logística", "Seguridad vial", "Servicios públicos: electricidad, agua y saneamiento", "Telecomunicaciones", "Construcción", "Seguridad de conductores adolescentes"])}
   </div>
 </section>
 
@@ -402,14 +362,7 @@ const flotasBody = `
       <p class="lead">Las flotas de vehículos y equipos representan una inversión grande, además de los gastos de operación y mantenimiento. Las empresas que todavía no se enfocaron en maximizar la eficiencia de esos activos tienen una oportunidad concreta de mejorar su productividad.</p>
     </div>
     <div class="gains">
-      ${[
-        { b: "Optimizar los tiempos de servicio", p: "Saber cuánto tarda realmente cada trabajo y comparar entre equipos y entre obras." },
-        { b: "Disminuir los tiempos de inactividad", p: "Detectar las horas en las que la máquina estuvo encendida sin producir." },
-        { b: "Reducir la facturación de horas adicionales", p: "La jornada de cada equipo queda registrada. Se factura lo que se trabajó." },
-        { b: "Reducir kilómetros y combustible", p: "Recorridos reales contra recorridos previstos, para cortar el desvío antes de que sea costumbre." },
-        { b: "Bajar gastos de comunicaciones", p: "Menos llamadas para preguntar dónde está la máquina y en qué estado quedó." },
-        { b: "Reducir gastos de personal", p: "Una misma persona puede coordinar más equipos cuando los ve a todos en el mismo mapa." }
-      ].map((g, i) => `<article class="gain rv rv-d${i % 3}" style="background:#fff"><b style="color:#08121e">${g.b}</b><p style="color:#4a6076">${g.p}</p></article>`).join("")}
+      ${GANANCIAS.map((g, i) => `<article class="gain rv"><span class="n">0${i + 1}</span><b>${g.b}</b><p>${g.p}</p></article>`).join("")}
     </div>
   </div>
 </section>
@@ -421,9 +374,8 @@ const flotasBody = `
       <h2>Un servicio que el pasajero puede ver.</h2>
       <p class="lead">Sistema de acceso público, totalmente didáctico e intuitivo. Aplicado al transporte de pasajeros, le da a la empresa y al usuario una herramienta de suma utilidad para hacer más eficiente el servicio.</p>
     </div>
-    <ul class="applist rv" style="margin-top:2rem">
-      ${["Vista pública del recorrido para el pasajero", "Control operativo de la frecuencia real", "Registro del cumplimiento de cada ramal", "Menos reclamos por espera a ciegas"].map(appItem).join("")}
-    </ul>
+    ${fig("transporte", "Colectivo urbano avanzando por una avenida al anochecer", "Transporte de pasajeros · vista pública del recorrido")}
+    ${applist(["Vista pública del recorrido para el pasajero", "Control operativo de la frecuencia real", "Registro del cumplimiento de cada ramal", "Menos reclamos por espera a ciegas"])}
     ${pnext([
       { k: "Siguiente", t: "Seguimiento de activos", h: "localizacion-activos.html" },
       { k: "Siguiente", t: "Rastreo de personas", h: "rastreo-de-personas.html" }
@@ -434,15 +386,11 @@ const flotasBody = `
 ${ctaFinal("¿Cuántas unidades tenés que controlar?", "Contanos el tamaño de la flota y el tipo de vehículo o de maquinaria, y te pasamos la cotización armada para tu operación.")}
 `;
 
+/* ================= ACTIVOS ================= */
 const activosBody = `
-<section class="phero">
-  <div class="bg-grid"></div>
-  <div class="wrap">
-    <p class="crumb"><a href="index.html">Inicio</a> / Seguimiento de activos</p>
-    <h1>Localización avanzada y monitoreo de activos móviles.</h1>
-    <p class="lead">Rastrear todo lo que se mueve sin conductor fijo, desde una computadora hasta el equipaje, es posible con rastreadores de batería de larga duración.</p>
-  </div>
-</section>
+${phero("activos", "Vista aérea de un camión avanzando por una ruta entre el monte", "Seguimiento de activos",
+  "Localización avanzada y monitoreo de activos móviles.",
+  "Rastrear todo lo que se mueve sin conductor fijo, desde una computadora hasta el equipaje, es posible con rastreadores de batería de larga duración.")}
 
 <section class="section section--tight">
   <div class="wrap">
@@ -458,13 +406,13 @@ const activosBody = `
       <div class="spec"><span>Montaje</span><b>Colocación temporal</b></div>
     </div>
 
-    <div class="head rv" style="margin-top:3.4rem">
+    ${fig("maquinaria", "Maquinaria pesada moviendo tierra en una cantera", "Maquinaria y activos que se mueven sin conductor fijo")}
+
+    <div class="head rv" style="margin-top:3.2rem">
       <p class="eyebrow">Dónde se aplica</p>
       <h2 style="font-size:clamp(1.5rem,4vw,2.1rem)">Activos que hoy se pierden de vista</h2>
     </div>
-    <ul class="applist rv">
-      ${["Monitoreo de vehículos en alquiler y alarmas inalámbricas", "Rastreo satelital de mascotas", "Rastreo de motocicletas", "Seguimiento y monitoreo de equipaje", "Cuidado infantil", "Monitoreo de conductores adolescentes"].map(appItem).join("")}
-    </ul>
+    ${applist(["Monitoreo de vehículos en alquiler y alarmas inalámbricas", "Rastreo satelital de mascotas", "Rastreo de motocicletas", "Seguimiento y monitoreo de equipaje", "Cuidado infantil", "Monitoreo de conductores adolescentes"])}
 
     ${pnext([
       { k: "Ver también", t: "Manejo de flotas", h: "manejo-de-flotas.html" },
@@ -476,15 +424,11 @@ const activosBody = `
 ${ctaFinal("¿Qué activo necesitás no perder de vista?", "Contanos qué querés rastrear y en qué condiciones se mueve. Con eso definimos el equipo y te pasamos el presupuesto.")}
 `;
 
+/* ================= PERSONAS ================= */
 const personasBody = `
-<section class="phero">
-  <div class="bg-grid"></div>
-  <div class="wrap">
-    <p class="crumb"><a href="index.html">Inicio</a> / Rastreo de personas</p>
-    <h1>Asegurá a tus trabajadores en todo momento.</h1>
-    <p class="lead">En muchas industrias los empleados trabajan sin supervisión, en ambientes que exigen mayor esfuerzo físico o jornadas extensas. En la mayoría de esos casos su seguridad personal queda expuesta, y eso no solo baja la productividad: aumenta la responsabilidad de la empresa.</p>
-  </div>
-</section>
+${phero("personas", "Trabajador con chaleco reflectivo y casco en una obra", "Rastreo de personas",
+  "Asegurá a tus trabajadores en todo momento.",
+  "En muchas industrias los empleados trabajan sin supervisión, en ambientes que exigen mayor esfuerzo físico o jornadas extensas. En la mayoría de esos casos su seguridad personal queda expuesta, y eso no solo baja la productividad: aumenta la responsabilidad de la empresa.")}
 
 <section class="section section--tight">
   <div class="wrap">
@@ -492,11 +436,11 @@ const personasBody = `
       <p class="eyebrow">A quiénes protege</p>
       <h2 style="font-size:clamp(1.5rem,4vw,2.1rem)">Trabajadores que pasan el día fuera del alcance de la vista</h2>
     </div>
-    <ul class="applist rv">
-      ${["Empleados independientes", "Personal que trabaja fuera de las oficinas: transporte, pintura, decoración, trabajos eléctricos y reparaciones", "Personas que trabajan fuera del horario de oficina, como seguridad o limpieza nocturna", "Trabajadores móviles, como vendedores que están solos gran parte de la jornada", "Personas que trabajan desde su casa"].map(appItem).join("")}
-    </ul>
+    ${applist(["Empleados independientes", "Personal que trabaja fuera de las oficinas: transporte, pintura, decoración, trabajos eléctricos y reparaciones", "Personas que trabajan fuera del horario de oficina, como seguridad o limpieza nocturna", "Trabajadores móviles, como vendedores que están solos gran parte de la jornada", "Personas que trabajan desde su casa"])}
 
-    <div class="prose rv" style="margin-top:3.2rem">
+    ${fig("personal", "Trabajadora con casco de seguridad en una planta industrial", "Personal que trabaja fuera de la vista del supervisor")}
+
+    <div class="prose rv" style="margin-top:3rem">
       <h2>La responsabilidad del empleador no se delega</h2>
       <p>Proteger la salud y la seguridad de todos los trabajadores es obligación de la empresa. En muchas ocasiones no es posible supervisar continuamente a cada persona, pero comunicarse con ellas y monitorear sus condiciones y prácticas de trabajo resulta de vital importancia para reducir los riesgos asociados.</p>
       <p>El rastreador GPS de <strong>Satelital Oeste</strong> permite que la ubicación del personal esté monitoreada de manera continua y que se envíe un mensaje cuando el trabajador regresó a salvo de su jornada. Ante cualquier eventualidad, el dispositivo envía automáticamente una alarma a la base, o el propio trabajador puede presionar un botón para dispararla. Los dispositivos también avisan cuando detectan un período largo de inactividad.</p>
@@ -509,7 +453,7 @@ const personasBody = `
       <div class="spec"><span>Automático</span><b>Aviso por inactividad</b></div>
     </div>
 
-    <div class="head rv" style="margin-top:3.4rem">
+    <div class="head rv" style="margin-top:3.2rem">
       <p class="eyebrow">Otros usos</p>
       <h2 style="font-size:clamp(1.5rem,4vw,2.1rem)">El mismo equipo, otras necesidades</h2>
       <p class="lead">Por su tamaño y su batería, el rastreador de personas también se aplica a la localización de mascotas y como señuelo dentro de la carga.</p>
@@ -525,15 +469,11 @@ const personasBody = `
 ${ctaFinal("Poné a tu gente en el mapa.", "Contanos cuántas personas trabajan fuera de la oficina y en qué condiciones. Te asesoramos sobre el equipo que corresponde.")}
 `;
 
+/* ================= CONTACTO ================= */
 const contactoBody = `
-<section class="phero">
-  <div class="bg-grid"></div>
-  <div class="wrap">
-    <p class="crumb"><a href="index.html">Inicio</a> / Contacto</p>
-    <h1>Hablemos de tu operación.</h1>
-    <p class="lead">Un 0800 gratuito para todo el país, WhatsApp, correo por área y sucursales en Buenos Aires y Córdoba. Elegí el canal que te quede más cómodo.</p>
-  </div>
-</section>
+${phero("ruta-noche", "Vista aérea nocturna de una ciudad con el tránsito iluminado", "Contacto",
+  "Hablemos de tu operación.",
+  "Un 0800 gratuito para todo el país, WhatsApp, correo por área y sucursales en Buenos Aires y Córdoba. Elegí el canal que te quede más cómodo.")}
 
 ${ctaFinal("Contanos de tu operación y armamos la propuesta.", "Cuantos más datos nos dejes sobre la cantidad de unidades y el tipo de vehículo o activo, más precisa sale la cotización.")}
 
@@ -544,7 +484,7 @@ ${ctaFinal("Contanos de tu operación y armamos la propuesta.", "Cuantos más da
       <h2 style="font-size:clamp(1.5rem,4vw,2.1rem)">Entrá a tu panel de seguimiento</h2>
       <p class="lead">Accedé con tu usuario y tu clave para ver tus unidades en el mapa. Si necesitás ayuda técnica, escribinos a ${SITE.mailTecnica}.</p>
     </div>
-    <div class="btns rv" style="margin-top:1.8rem">
+    <div class="btns rv" style="margin-top:1.7rem">
       <a class="btn btn--pri" href="${SITE.plataforma}" target="_blank" rel="noopener">${ICO.llave} Acceso a clientes</a>
       <a class="btn btn--gho" href="mailto:${SITE.mailTecnica}">${ICO.mail} Soporte técnico</a>
     </div>
@@ -586,7 +526,6 @@ for (const p of PAGES) {
   console.log("· " + p.file);
 }
 
-/* sitemap + robots */
 const hoy = process.env.BUILD_DATE || new Date().toISOString().slice(0, 10);
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
