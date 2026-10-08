@@ -12,14 +12,13 @@ const schema = () => JSON.stringify({
   "@id": SITE.dominio + "/#negocio",
   name: "Satelital Oeste",
   slogan: "Seguimiento en tiempo real",
-  description: "Rastreo satelital GPS en tiempo real para flotas de vehículos, maquinaria pesada, transporte público, activos móviles y personas. Sucursales en Buenos Aires y Córdoba.",
+  description: "Rastreo satelital GPS en tiempo real para flotas de vehículos, maquinaria pesada, transporte público, activos móviles y personas. 0800 122 0789 para todo el país.",
   url: SITE.dominio + "/",
   telephone: ["+54-800-122-0789", "+54-9-11-3247-5460", "+54-9-11-5815-5948"],
   email: SITE.mailInfo,
   areaServed: { "@type": "Country", name: "Argentina" },
   address: [
-    { "@type": "PostalAddress", addressRegion: "Buenos Aires", addressCountry: "AR" },
-    { "@type": "PostalAddress", addressRegion: "Córdoba", addressCountry: "AR" }
+    { "@type": "PostalAddress", addressRegion: "Buenos Aires", addressCountry: "AR" }
   ],
   sameAs: [SITE.facebook, SITE.youtube],
   knowsAbout: ["Rastreo satelital", "Gestión de flotas", "Localización GPS", "Seguimiento de activos"]
@@ -67,7 +66,7 @@ function footer() {
           ${marca("f")}
           <span class="txt"><span class="n">Satelital Oeste</span><span class="t">Seguimiento en tiempo real</span></span>
         </a>
-        <p>Rastreo satelital y desarrollo de soluciones informáticas. Control de flotas, maquinaria pesada, transporte público, activos móviles y personas, con sucursales en Buenos Aires y Córdoba.</p>
+        <p>Rastreo satelital y desarrollo de soluciones informáticas. Control de flotas, maquinaria pesada, transporte público, activos móviles y personas.</p>
         <div class="ftr-soc">
           <a href="${SITE.facebook}" target="_blank" rel="noopener" aria-label="Facebook de Satelital Oeste">${ICO.fb}</a>
           <a href="${SITE.youtube}" target="_blank" rel="noopener" aria-label="Canal de YouTube de Satelital Oeste">${ICO.yt}</a>
@@ -108,7 +107,7 @@ function footer() {
     </div>
     <div class="ftr-bot">
       <p>&copy; <span id="y">2026</span> Satelital Oeste. Todos los derechos reservados.</p>
-      <p>Buenos Aires · Córdoba · Argentina</p>
+      <p>Argentina</p>
     </div>
   </div>
 </footer>

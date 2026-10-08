@@ -186,7 +186,7 @@ const indexBody = `
   <div class="bg-grid"></div>
   <div class="wrap hero-in">
     <div>
-      <p class="eyebrow rv">Buenos Aires y Córdoba</p>
+      <p class="eyebrow rv">Seguimiento en tiempo real</p>
       <h1 class="rv rv-d1">Dónde está cada unidad, <span class="hl">ahora mismo</span>.</h1>
       <p class="lead rv rv-d2">Rastreo y seguimiento en tiempo real para flotas, maquinaria pesada, transporte público, activos móviles y personas. Equipos instalados, plataforma propia y soporte técnico de este lado del teléfono.</p>
       <div class="btns rv rv-d3">
@@ -195,7 +195,7 @@ const indexBody = `
       </div>
       <ul class="hero-trust rv rv-d4">
         <li><span>Centro de atención</span><b>${SITE.tel0800}</b></li>
-        <li><span>Sucursales</span><b>Buenos Aires y Córdoba</b></li>
+        <li><span>Instalación</span><b>La hacemos nosotros</b></li>
         <li><span>Plataforma</span><b>Acceso web para clientes</b></li>
       </ul>
     </div>
@@ -517,7 +517,7 @@ ${ctaFinal("Poné a tu gente en el mapa.", "Contanos cuántas personas trabajan 
 const contactoBody = `
 ${phero("ruta-noche", "Vista aérea nocturna de una ciudad con el tránsito iluminado", "Contacto",
   "Hablemos de tu operación.",
-  "Un 0800 gratuito para todo el país, WhatsApp, correo por área y sucursales en Buenos Aires y Córdoba. Elegí el canal que te quede más cómodo.")}
+  "Un 0800 gratuito para todo el país, WhatsApp y correo por área. Elegí el canal que te quede más cómodo.")}
 
 ${ctaFinal("Contanos de tu operación y armamos la propuesta.", "Cuantos más datos nos dejes sobre la cantidad de unidades y el tipo de vehículo o activo, más precisa sale la cotización.")}
 
@@ -541,7 +541,7 @@ const PAGES = [
   {
     file: "index.html", active: "index.html", body: indexBody, extraHead: estilosMapa,
     title: "Satelital Oeste | Rastreo satelital GPS en tiempo real para flotas y personas",
-    desc: "Rastreo y seguimiento satelital en tiempo real: control de flotas de vehículos, maquinaria pesada, transporte público, activos móviles y personas. Sucursales en Buenos Aires y Córdoba. 0800 122 0789."
+    desc: "Rastreo y seguimiento satelital en tiempo real: control de flotas de vehículos, maquinaria pesada, transporte público, activos móviles y personas. 0800 122 0789."
   },
   {
     file: "manejo-de-flotas.html", active: "manejo-de-flotas.html", body: flotasBody,
@@ -561,7 +561,7 @@ const PAGES = [
   {
     file: "contacto.html", active: "contacto.html", body: contactoBody,
     title: "Contacto | Satelital Oeste — 0800 122 0789",
-    desc: "Contactate con Satelital Oeste: 0800 122 0789, WhatsApp, correo comercial y técnico, sucursales en Buenos Aires y Córdoba. Pedí tu cotización de rastreo satelital."
+    desc: "Contactate con Satelital Oeste: 0800 122 0789, WhatsApp, correo comercial y técnico. Pedí tu cotización de rastreo satelital."
   }
 ];
 

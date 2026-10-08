@@ -52,7 +52,7 @@ export const banda = `
   <div class="wrap">
     <p class="eyebrow rv">Cómo trabajamos</p>
     <h2 class="rv rv-d1">La unidad se mueve. El mapa la sigue.</h2>
-    <p class="lead rv rv-d2">Sucursales en Buenos Aires y en Córdoba, y un 0800 gratuito para todo el país. Lo que cambia de un cliente a otro es el equipo que se instala, no la forma de mirarlo.</p>
+    <p class="lead rv rv-d2">Un 0800 gratuito para todo el país. Lo que cambia de un cliente a otro es el equipo que se instala, no la forma de mirarlo.</p>
   </div>
 </section>`;
 
