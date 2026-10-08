@@ -19,7 +19,8 @@ export const IMG = {
   "ruta-atardecer": { ar: 21 / 9, w: [700, 1100, 1800] },
   "camiones":       { ar: 16 / 9, w: [600, 900, 1400] },
   "personal":       { ar: 16 / 9, w: [600, 900, 1400] },
-  "dashcam-app":    { ar: 768 / 1664, w: [400, 600, 800] }
+  "dashcam-app":    { ar: 768 / 1664, w: [400, 600, 800] },
+  "dashcam-ruta":   { ar: 745 / 424, w: [500, 745] }
 };
 
 export function img(name, alt, sizes, eager = false) {
@@ -52,7 +53,7 @@ export const banda = `
   <div class="wrap">
     <p class="eyebrow rv">Cómo trabajamos</p>
     <h2 class="rv rv-d1">La unidad se mueve. El mapa la sigue.</h2>
-    <p class="lead rv rv-d2">Un 0800 gratuito para todo el país. Lo que cambia de un cliente a otro es el equipo que se instala, no la forma de mirarlo.</p>
+    <p class="lead rv rv-d2">Casa central en Buenos Aires y sucursal en Córdoba, con un 0800 gratuito para todo el país. Lo que cambia de un cliente a otro es el equipo que se instala, no la forma de mirarlo.</p>
   </div>
 </section>`;
 
@@ -95,7 +96,8 @@ export const ctaFinal = (titulo, texto) => `
           <a href="mailto:${SITE.mailTecnica}"><span class="k">Soporte técnico</span><span class="v">${SITE.mailTecnica}</span>${ICO.flecha}</a>
         </div>
         <ul class="branch">
-          <li><span>Sucursal</span><b>Buenos Aires</b><p><a href="${SITE.telWaHref}">${SITE.telWa}</a></p></li>
+          <li><span>Casa central</span><b>Buenos Aires</b><p><a href="${SITE.telWaHref}">${SITE.telWa}</a></p></li>
+          <li><span>Sucursal</span><b>Córdoba</b><p><a href="${SITE.tel0800Href}">${SITE.tel0800}</a></p></li>
         </ul>
       </div>
     </div>

@@ -176,7 +176,7 @@ const FAQ = [
   { q: "¿Desde dónde veo mis unidades?", a: "Desde la plataforma web, con tu usuario y tu clave. Se entra por navegador, desde una computadora o desde el celular, sin instalar programas." },
   { q: "¿Qué pasa con los activos que no tienen batería del vehículo?", a: "Para eso están los rastreadores con batería de larga duración. Combinados con sensores de movimiento, pueden funcionar semanas sin recargarse ni conectarse a otra fuente de energía." },
   { q: "¿Se puede rastrear personas y no solo vehículos?", a: "Sí. Es el rastreador más chico del mercado, más chico que un celular y con batería incorporada. Se usa para personal que trabaja solo o fuera de la oficina, para mascotas y como señuelo dentro de la carga." },
-  { q: "¿Atienden fuera de Buenos Aires?", a: "Sí. Hay un 0800 gratuito para todo el país: 0800 122 0789. Contános dónde operás y te decimos cómo lo cubrimos." },
+  { q: "¿Atienden fuera de Buenos Aires?", a: "Sí. La casa central está en Buenos Aires y tenemos sucursal en Córdoba, con un 0800 gratuito para todo el país: 0800 122 0789." },
   { q: "¿Cuánto sale el servicio?", a: "Depende de la cantidad de unidades y del tipo de equipo que necesite cada una. Escribinos por WhatsApp o dejanos los datos en el formulario y te pasamos la cotización armada para tu caso." }
 ];
 
@@ -186,7 +186,7 @@ const indexBody = `
   <div class="bg-grid"></div>
   <div class="wrap hero-in">
     <div>
-      <p class="eyebrow rv">Seguimiento en tiempo real</p>
+      <p class="eyebrow rv">Buenos Aires y Córdoba</p>
       <h1 class="rv rv-d1">Dónde está cada unidad, <span class="hl">ahora mismo</span>.</h1>
       <p class="lead rv rv-d2">Rastreo y seguimiento en tiempo real para flotas, maquinaria pesada, transporte público, activos móviles y personas. Equipos instalados, plataforma propia y soporte técnico de este lado del teléfono.</p>
       <div class="btns rv rv-d3">
@@ -195,7 +195,7 @@ const indexBody = `
       </div>
       <ul class="hero-trust rv rv-d4">
         <li><span>Centro de atención</span><b>${SITE.tel0800}</b></li>
-        <li><span>Instalación</span><b>La hacemos nosotros</b></li>
+        <li><span>Cobertura</span><b>Buenos Aires y Córdoba</b></li>
         <li><span>Plataforma</span><b>Acceso web para clientes</b></li>
       </ul>
     </div>
@@ -332,8 +332,8 @@ ${banda}
     </div>
 
     <div class="btns" style="margin-top:2.2rem">
-      <a class="btn btn--pri" href="${waLink("Hola Satelital Oeste, quiero información sobre las cámaras con videomonitoreo móvil.")}" target="_blank" rel="noopener">${ICO.wa} Consultar por las cámaras</a>
-      <a class="btn btn--gho" href="contacto.html">Pedir una demo</a>
+      <a class="btn btn--pri" href="videomonitoreo-movil.html">Ver videomonitoreo en detalle ${ICO.flecha}</a>
+      <a class="btn btn--gho" href="${waLink("Hola Satelital Oeste, quiero información sobre las cámaras con videomonitoreo móvil.")}" target="_blank" rel="noopener">${ICO.wa} Consultar por las cámaras</a>
     </div>
   </div>
 </section>
@@ -513,11 +513,78 @@ ${phero("personas", "Trabajador con chaleco reflectivo y casco en una obra", "Ra
 ${ctaFinal("Poné a tu gente en el mapa.", "Contanos cuántas personas trabajan fuera de la oficina y en qué condiciones. Te asesoramos sobre el equipo que corresponde.")}
 `;
 
+
+/* ================= VIDEOMONITOREO MOVIL ================= */
+const camarasBody = `
+${phero("camiones", "Camiones y utilitarios circulando por una autopista", "Videomonitoreo móvil",
+  "Además de dónde está, qué está pasando.",
+  "El rastreo te dice dónde está cada unidad. La cámara te muestra lo que pasa ahí: la ruta, la cabina y el momento exacto que necesitás ver. Y no es un equipo aparte: ya trae el rastreador satelital adentro.")}
+
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="eyebrow">Un solo equipo</p>
+      <h2 style="font-size:clamp(1.5rem,4vw,2.1rem)">Cámara y rastreo satelital en el mismo aparato</h2>
+      <p class="lead">Se instala una sola vez, pegado al parabrisas. No hay que sumar un GPS por separado ni pagar dos servicios: la cámara reporta la posición igual que un equipo de rastreo, y además graba.</p>
+    </div>
+
+    ${fig("dashcam-ruta", "Vista en vivo de la cámara frontal, con fecha, posición y velocidad sobre la imagen", "Cámara frontal en vivo · cada cuadro queda con fecha, hora, posición y velocidad")}
+
+    <div class="head rv" style="margin-top:3.2rem">
+      <p class="eyebrow">Dos modelos</p>
+      <h2 style="font-size:clamp(1.5rem,4vw,2.1rem)">Según qué necesités ver</h2>
+    </div>
+    ${applist([
+      "<b>Solo cámara frontal.</b> Mira la ruta y el entorno del vehículo. Es la que respalda un siniestro, un reclamo o la prueba de por dónde se pasó y cómo.",
+      "<b>Frontal más cabina.</b> Suma una segunda cámara gran angular que toma casi toda la cabina. Es la que resuelve el “llamo y no contesta”: en vez de suponer, mirás."
+    ])}
+
+    <div class="head rv" style="margin-top:3.2rem">
+      <p class="eyebrow">Cómo se usa</p>
+      <h2 style="font-size:clamp(1.5rem,4vw,2.1rem)">Tres formas de mirar, desde el celular o la computadora</h2>
+      <p class="lead">Entrás con tu usuario y tu clave, elegís la unidad y listó. Lo mismo que ya hacés para ver el mapa.</p>
+    </div>
+    ${applist([
+      "<b>En vivo.</b> Lo que está pasando en este momento. Elegís la cámara de la ruta, la de la cabina o las dos juntas.",
+      "<b>Histórico.</b> Buscás por día, fecha y hora. La grabación queda guardada en videos de tres minutos que podés ir consultando uno por uno.",
+      "<b>Captura al instante.</b> Una foto de lo que se está viendo, sin esperar a que cargue el video. Para cuando necesitás saber ya."
+    ])}
+
+    <div class="dashcam-shot rv" style="margin-top:2.6rem">
+      <style>.dashcam-shot img{max-height:620px;width:auto;margin-inline:auto;display:block;border-radius:18px}
+      .dashcam-shot figcaption{text-align:center}</style>
+      ${img("dashcam-app", "App de Satelital Oeste mostrando la cámara frontal en vivo", "(min-width:900px) 360px, 70vw")}
+      <p class="console-note" style="text-align:center;color:#5e7286;margin-top:.8rem">La app, con las tres pestañas: frontal, cabina o ambas</p>
+    </div>
+
+    <div class="specs rv" style="margin-top:3rem">
+      <div class="spec"><span>Instalación</span><b>Pegada al parabrisas</b></div>
+      <div class="spec"><span>Grabación</span><b>Mientras el vehículo anda</b></div>
+      <div class="spec"><span>Memoria</span><b>Tarjeta a bordo</b></div>
+      <div class="spec"><span>Emergencia</span><b>Botón de pánico</b></div>
+    </div>
+
+    <div class="prose rv" style="margin-top:3rem">
+      <h2>Para qué termina sirviendo</h2>
+      <p>La situación más común no es el robo: es que llamás y no te atienden. Tenés la ubicación, pero no sabés qué pasa. Con una imagen dejás de suponer.</p>
+      <p>La otra es el respaldo. Ante un siniestro o un reclamo, el rastreo te da un punto en el mapa; la cámara te da lo que efectivamente ocurrió en ese lugar y a esa hora. Es la diferencia entre decir que el vehículo pasó por ahí y poder mostrarlo.</p>
+    </div>
+
+    ${pnext([
+      { k: "Ver también", t: "Manejo de flotas", h: "manejo-de-flotas.html" },
+      { k: "Ver también", t: "Seguimiento de activos", h: "localizacion-activos.html" }
+    ])}
+  </div>
+</section>
+
+${ctaFinal("¿Lo ves útil para tu operación?", "Contanos cuántas unidades tenés y si te sirve ver la ruta, la cabina o las dos. Te decimos qué modelo corresponde y cómo queda instalado.")}
+`;
+
 /* ================= CONTACTO ================= */
 const contactoBody = `
 ${phero("ruta-noche", "Vista aérea nocturna de una ciudad con el tránsito iluminado", "Contacto",
   "Hablemos de tu operación.",
-  "Un 0800 gratuito para todo el país, WhatsApp y correo por área. Elegí el canal que te quede más cómodo.")}
+  "Casa central en Buenos Aires y sucursal en Córdoba, con un 0800 gratuito para todo el país. Elegí el canal que te quede más cómodo.")}
 
 ${ctaFinal("Contanos de tu operación y armamos la propuesta.", "Cuantos más datos nos dejes sobre la cantidad de unidades y el tipo de vehículo o activo, más precisa sale la cotización.")}
 
@@ -541,7 +608,7 @@ const PAGES = [
   {
     file: "index.html", active: "index.html", body: indexBody, extraHead: estilosMapa,
     title: "Satelital Oeste | Rastreo satelital GPS en tiempo real para flotas y personas",
-    desc: "Rastreo y seguimiento satelital en tiempo real: control de flotas de vehículos, maquinaria pesada, transporte público, activos móviles y personas. 0800 122 0789."
+    desc: "Rastreo y seguimiento satelital en tiempo real: control de flotas de vehículos, maquinaria pesada, transporte público, activos móviles y personas. Buenos Aires y Córdoba. 0800 122 0789."
   },
   {
     file: "manejo-de-flotas.html", active: "manejo-de-flotas.html", body: flotasBody,
@@ -559,9 +626,14 @@ const PAGES = [
     desc: "El rastreador GPS más chico del mercado, con batería incorporada, botón de alarma y aviso por inactividad. Para personal que trabaja solo, fuera de la oficina o de noche."
   },
   {
+    file: "videomonitoreo-movil.html", active: "videomonitoreo-movil.html", body: camarasBody,
+    title: "Videomonitoreo móvil — cámaras con rastreo incluido | Satelital Oeste",
+    desc: "Cámaras para vehículos con rastreo satelital incluido: cámara a la ruta y a la cabina, video en vivo, histórico por fecha y hora, captura instantánea y botón de pánico."
+  },
+  {
     file: "contacto.html", active: "contacto.html", body: contactoBody,
     title: "Contacto | Satelital Oeste — 0800 122 0789",
-    desc: "Contactate con Satelital Oeste: 0800 122 0789, WhatsApp, correo comercial y técnico. Pedí tu cotización de rastreo satelital."
+    desc: "Contactate con Satelital Oeste: 0800 122 0789, WhatsApp y correo comercial y técnico. Casa central en Buenos Aires y sucursal en Córdoba."
   }
 ];
 

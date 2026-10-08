@@ -34,6 +34,7 @@ export const NAV = [
   { t: "Manejo de flotas", s: "Flotas", h: "manejo-de-flotas.html" },
   { t: "Seguimiento de activos", s: "Activos", h: "localizacion-activos.html" },
   { t: "Rastreo de personas", s: "Personas", h: "rastreo-de-personas.html" },
+  { t: "Videomonitoreo móvil", s: "Cámaras", h: "videomonitoreo-movil.html" },
   { t: "Contacto", s: "Contacto", h: "contacto.html" }
 ];
 

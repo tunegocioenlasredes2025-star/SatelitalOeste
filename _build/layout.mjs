@@ -12,13 +12,14 @@ const schema = () => JSON.stringify({
   "@id": SITE.dominio + "/#negocio",
   name: "Satelital Oeste",
   slogan: "Seguimiento en tiempo real",
-  description: "Rastreo satelital GPS en tiempo real para flotas de vehículos, maquinaria pesada, transporte público, activos móviles y personas. 0800 122 0789 para todo el país.",
+  description: "Rastreo satelital GPS en tiempo real para flotas de vehículos, maquinaria pesada, transporte público, activos móviles y personas. Casa central en Buenos Aires y sucursal en Córdoba.",
   url: SITE.dominio + "/",
   telephone: ["+54-800-122-0789", "+54-9-11-3247-5460", "+54-9-11-5815-5948"],
   email: SITE.mailInfo,
   areaServed: { "@type": "Country", name: "Argentina" },
   address: [
-    { "@type": "PostalAddress", addressRegion: "Buenos Aires", addressCountry: "AR" }
+    { "@type": "PostalAddress", addressRegion: "Buenos Aires", addressCountry: "AR" },
+    { "@type": "PostalAddress", addressRegion: "Córdoba", addressCountry: "AR" }
   ],
   sameAs: [SITE.facebook, SITE.youtube],
   knowsAbout: ["Rastreo satelital", "Gestión de flotas", "Localización GPS", "Seguimiento de activos"]
@@ -107,7 +108,7 @@ function footer() {
     </div>
     <div class="ftr-bot">
       <p>&copy; <span id="y">2026</span> Satelital Oeste. Todos los derechos reservados.</p>
-      <p>Argentina</p>
+      <p>Buenos Aires · Córdoba · Argentina</p>
     </div>
   </div>
 </footer>
