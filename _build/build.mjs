@@ -176,7 +176,7 @@ const FAQ = [
   { q: "¿Desde dónde veo mis unidades?", a: "Desde la plataforma web, con tu usuario y tu clave. Se entra por navegador, desde una computadora o desde el celular, sin instalar programas." },
   { q: "¿Qué pasa con los activos que no tienen batería del vehículo?", a: "Para eso están los rastreadores con batería de larga duración. Combinados con sensores de movimiento, pueden funcionar semanas sin recargarse ni conectarse a otra fuente de energía." },
   { q: "¿Se puede rastrear personas y no solo vehículos?", a: "Sí. Es el rastreador más chico del mercado, más chico que un celular y con batería incorporada. Se usa para personal que trabaja solo o fuera de la oficina, para mascotas y como señuelo dentro de la carga." },
-  { q: "¿Atienden fuera de Buenos Aires?", a: "Sí. Trabajamos con sucursales en Buenos Aires y en Córdoba, y hay un 0800 gratuito para todo el país. Desde el exterior se atiende al 0054 11 5294-8303." },
+  { q: "¿Atienden fuera de Buenos Aires?", a: "Sí. Hay un 0800 gratuito para todo el país: 0800 122 0789. Contános dónde operás y te decimos cómo lo cubrimos." },
   { q: "¿Cuánto sale el servicio?", a: "Depende de la cantidad de unidades y del tipo de equipo que necesite cada una. Escribinos por WhatsApp o dejanos los datos en el formulario y te pasamos la cotización armada para tu caso." }
 ];
 
@@ -290,6 +290,50 @@ ${banda}
           <a class="btn btn--ghoink" href="contacto.html">Quiero una demo</a>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="videomonitoreo">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="eyebrow">Videomonitoreo móvil</p>
+      <h2>Además del punto en el mapa, la imagen.</h2>
+      <p class="lead">La cámara no es un equipo aparte: <b>ya trae el rastreador satelital adentro</b>. Se instala una sola vez, pegada al parabrisas, y desde la misma app ves dónde está la unidad y qué está pasando ahí.</p>
+    </div>
+
+    <div class="plat">
+      <div class="rasgos rv">
+        <article class="rasgo"><span class="n">01</span><h4>En vivo</h4>
+          <p>Abrís la app y ves lo que está pasando en ese momento. Elegís la cámara de la ruta, la de la cabina o las dos juntas.</p></article>
+        <article class="rasgo"><span class="n">02</span><h4>Histórico</h4>
+          <p>Buscás por día, fecha y hora. La grabación queda guardada en videos de tres minutos que podés ir consultando.</p></article>
+        <article class="rasgo"><span class="n">03</span><h4>Captura al instante</h4>
+          <p>Una foto de lo que se está viendo, sin esperar a que cargue el video. Para cuando necesitás saber ya.</p></article>
+      </div>
+      <div class="rv rv-d1 dashcam-shot">
+        <style>.dashcam-shot img{max-height:560px;width:auto;margin-inline:auto;display:block;border-radius:18px}
+        .dashcam-shot .console-note{text-align:center}</style>
+        ${img("dashcam-app", "App de Satelital Oeste mostrando la cámara frontal en vivo, con fecha, posición y velocidad", "(min-width:900px) 40vw, 80vw")}
+        <p class="console-note" style="color:#5e7286">App de Satelital Oeste · cámara frontal en vivo</p>
+      </div>
+    </div>
+
+    <div class="head rv" style="margin-top:3.5rem">
+      <h2 style="font-size:clamp(1.3rem,3.2vw,1.8rem)">Dos modelos, según qué necesités ver</h2>
+    </div>
+    <div class="rasgos rv">
+      <article class="rasgo"><span class="n">01</span><h4>Solo cámara frontal</h4>
+        <p>Mira la ruta y el entorno del vehículo. Sirve para respaldar un siniestro, un reclamo o demostrar por dónde se pasó y cómo.</p></article>
+      <article class="rasgo"><span class="n">02</span><h4>Frontal más cabina</h4>
+        <p>Suma una segunda cámara gran angular que toma casi toda la cabina. Es la que resuelve el “llamo y no contesta”: en vez de suponer, mirás.</p></article>
+      <article class="rasgo"><span class="n">03</span><h4>Graba sola, con botón de pánico</h4>
+        <p>Graba todo el tiempo que el vehículo está en marcha, sin que nadie la active. Y el chofer tiene un botón de pánico a mano.</p></article>
+    </div>
+
+    <div class="btns" style="margin-top:2.2rem">
+      <a class="btn btn--pri" href="${waLink("Hola Satelital Oeste, quiero información sobre las cámaras con videomonitoreo móvil.")}" target="_blank" rel="noopener">${ICO.wa} Consultar por las cámaras</a>
+      <a class="btn btn--gho" href="contacto.html">Pedir una demo</a>
     </div>
   </div>
 </section>

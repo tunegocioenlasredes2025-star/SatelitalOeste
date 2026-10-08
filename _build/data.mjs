@@ -9,17 +9,18 @@ export const SITE = {
   nombre: "Satelital Oeste",
   tagline: "Seguimiento en tiempo real",
   dominio: "https://www.satelitaloeste.com.ar",
-  // Telefonos publicados en satelitaloeste.com.ar/contacto.php
+  // Telefonos CONFIRMADOS por el cliente el 05/10/2026. Dijo textual que
+  // "algunos ya no existen" y que los que quedan son estos tres. Se dieron de
+  // baja el 0054 11 5294-8303 ("desde el exterior") y el (03546) 15-502842
+  // (sucursal Cordoba), que venian del sitio viejo.
   tel0800: "0800 122 0789",
   tel0800Href: "tel:08001220789",
-  telExterior: "0054 11 5294-8303",
-  telExteriorHref: "tel:+541152948303",
+  // WhatsApp de la empresa (cuenta business): es el que atiende
+  telWa: "+54 9 11 3247-5460",
+  telWaHref: "tel:+5491132475460",
   telBsAs: "(011) 15-5815-5948",
   telBsAsHref: "tel:+5491158155948",
-  telCba: "(03546) 15-502842",
-  telCbaHref: "tel:+543546502842",
-  // Numero movil de Buenos Aires usado para WhatsApp — CONFIRMAR con el cliente
-  wa: "5491158155948",
+  wa: "5491132475460",
   mailInfo: "info@satelitaloeste.com.ar",
   mailContacto: "contacto@satelitaloeste.com.ar",
   mailTecnica: "tecnica@satelitaloeste.com.ar",

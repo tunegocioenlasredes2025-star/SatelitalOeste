@@ -14,7 +14,7 @@ const schema = () => JSON.stringify({
   slogan: "Seguimiento en tiempo real",
   description: "Rastreo satelital GPS en tiempo real para flotas de vehículos, maquinaria pesada, transporte público, activos móviles y personas. Sucursales en Buenos Aires y Córdoba.",
   url: SITE.dominio + "/",
-  telephone: ["+54-800-122-0789", "+54-11-5815-5948", "+54-3546-502842"],
+  telephone: ["+54-800-122-0789", "+54-9-11-3247-5460", "+54-9-11-5815-5948"],
   email: SITE.mailInfo,
   areaServed: { "@type": "Country", name: "Argentina" },
   address: [
@@ -99,9 +99,8 @@ function footer() {
           <h4>Contacto</h4>
           <ul>
             <li><a href="${SITE.tel0800Href}">${SITE.tel0800}</a></li>
+            <li><a href="${SITE.telWaHref}">${SITE.telWa}</a></li>
             <li><a href="${SITE.telBsAsHref}">${SITE.telBsAs}</a></li>
-            <li><a href="${SITE.telCbaHref}">${SITE.telCba}</a></li>
-            <li><a href="${SITE.telExteriorHref}">${SITE.telExterior}</a></li>
             <li><a href="mailto:${SITE.mailInfo}">${SITE.mailInfo}</a></li>
           </ul>
         </div>

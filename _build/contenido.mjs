@@ -18,7 +18,8 @@ export const IMG = {
   "personas":       { ar: 4 / 3,  w: [500, 700, 1000] },
   "ruta-atardecer": { ar: 21 / 9, w: [700, 1100, 1800] },
   "camiones":       { ar: 16 / 9, w: [600, 900, 1400] },
-  "personal":       { ar: 16 / 9, w: [600, 900, 1400] }
+  "personal":       { ar: 16 / 9, w: [600, 900, 1400] },
+  "dashcam-app":    { ar: 768 / 1664, w: [400, 600, 800] }
 };
 
 export function img(name, alt, sizes, eager = false) {
@@ -89,14 +90,12 @@ export const ctaFinal = (titulo, texto) => `
         <h3 style="margin-block:.8rem 1.2rem;font-size:clamp(1.3rem,3.4vw,1.7rem)">Hablá con alguien ahora</h3>
         <div class="canal">
           <a href="${SITE.tel0800Href}"><span class="k">Centro de atención</span><span class="v">${SITE.tel0800}</span>${ICO.flecha}</a>
-          <a href="${waLink("Hola Satelital Oeste, quiero una cotización del servicio de rastreo satelital.")}" target="_blank" rel="noopener"><span class="k">WhatsApp</span><span class="v">${SITE.telBsAs}</span>${ICO.flecha}</a>
-          <a href="${SITE.telExteriorHref}"><span class="k">Desde el exterior</span><span class="v">${SITE.telExterior}</span>${ICO.flecha}</a>
+          <a href="${waLink("Hola Satelital Oeste, quiero una cotización del servicio de rastreo satelital.")}" target="_blank" rel="noopener"><span class="k">WhatsApp</span><span class="v">${SITE.telWa}</span>${ICO.flecha}</a>
           <a href="mailto:${SITE.mailContacto}"><span class="k">Consultas comerciales</span><span class="v">${SITE.mailContacto}</span>${ICO.flecha}</a>
           <a href="mailto:${SITE.mailTecnica}"><span class="k">Soporte técnico</span><span class="v">${SITE.mailTecnica}</span>${ICO.flecha}</a>
         </div>
         <ul class="branch">
-          <li><span>Sucursal</span><b>Buenos Aires</b><p><a href="${SITE.telBsAsHref}">${SITE.telBsAs}</a></p></li>
-          <li><span>Sucursal</span><b>Córdoba</b><p><a href="${SITE.telCbaHref}">${SITE.telCba}</a></p></li>
+          <li><span>Sucursal</span><b>Buenos Aires</b><p><a href="${SITE.telWaHref}">${SITE.telWa}</a></p></li>
         </ul>
       </div>
     </div>
