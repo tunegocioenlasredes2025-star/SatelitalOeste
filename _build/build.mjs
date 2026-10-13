@@ -369,7 +369,7 @@ ${ctaFinal("Contanos qué necesitás controlar.", "Dejanos los datos y te armamo
 
 /* ================= MANEJO DE FLOTAS ================= */
 const GANANCIAS = [
-  { b: "Optimizar los tiempos de servicio", p: "Saber cuánto tarda realmente cada trabajo y comparar entre equipos y entre obras." },
+  { b: "Optimizar los tiempos de servicio", p: "Saber cuánto tarda realmente cada trabajo y comparar entre equipos, y entre obras." },
   { b: "Disminuir los tiempos de inactividad", p: "Detectar las horas en las que la máquina estuvo encendida sin producir." },
   { b: "Reducir la facturación de horas adicionales", p: "La jornada de cada equipo queda registrada. Se factura lo que se trabajó." },
   { b: "Reducir kilómetros y combustible", p: "El recorrido real de cada equipo, con hora y posición punto por punto, para ver desvíos y vueltas repetidas." },
