@@ -127,7 +127,7 @@ const SOLS = [
     im: "flotas", alt: "Camiones circulando por una autopista de varios carriles",
     t: "Manejo de flotas", h: "manejo-de-flotas.html",
     p: "La operación completa en un mapa a pantalla completa, para saber en cada instante qué pasa con cada vehículo y ajustar sobre la marcha.",
-    li: ["Recorridos y posición en tiempo real", "Consumo de combustible y excesos de velocidad", "Taxis, distribución, logística y servicios públicos"]
+    li: ["Recorridos y posición en tiempo real", "Estado del motor y de la batería del vehículo", "Taxis, distribución, logística y servicios públicos"]
   },
   {
     im: "transporte", alt: "Colectivo urbano avanzando por una avenida al anochecer",
@@ -158,7 +158,7 @@ const COSTOS = [
 
 const RASGOS = [
   { t: "Mapa a pantalla completa, en vivo", p: "Toda la operación en una sola vista, actualizada al instante. La gestión se hace mirando, no llamando." },
-  { t: "Consumo de combustible y excesos de velocidad", p: "Las entradas y salidas del equipo reportan información del vehículo, no solamente la posición en el mapa." },
+  { t: "Estado del motor y de la batería", p: "Encendido y apagado del vehículo, y el estado de su batería. Las entradas y salidas del equipo reportan información del vehículo, no solamente la posición en el mapa." },
   { t: "Alarma automática y botón de pánico", p: "El dispositivo envía la alerta solo ante una eventualidad, y la persona también puede dispararla con un botón." },
   { t: "Aviso por inactividad", p: "Si una unidad o una persona queda demasiado tiempo sin moverse, la plataforma lo informa." },
   { t: "Acceso web con usuario propio", p: "Cada cliente entra con su clave y ve únicamente sus unidades, desde cualquier navegador y sin instalar nada." }
@@ -176,7 +176,7 @@ const FAQ = [
   { q: "¿Desde dónde veo mis unidades?", a: "Desde la plataforma web, con tu usuario y tu clave. Se entra por navegador, desde una computadora o desde el celular, sin instalar programas." },
   { q: "¿Qué pasa con los activos que no tienen batería del vehículo?", a: "Para eso están los rastreadores con batería de larga duración. Combinados con sensores de movimiento, pueden funcionar semanas sin recargarse ni conectarse a otra fuente de energía." },
   { q: "¿Se puede rastrear personas y no solo vehículos?", a: "Sí. Es el rastreador más chico del mercado, más chico que un celular y con batería incorporada. Se usa para personal que trabaja solo o fuera de la oficina, para mascotas y como señuelo dentro de la carga." },
-  { q: "¿Atienden fuera de Buenos Aires?", a: "Sí. La casa central está en Buenos Aires y tenemos sucursal en Córdoba, con un 0800 gratuito para todo el país: 0800 122 0789." },
+  { q: "¿Atienden fuera de Buenos Aires?", a: "Sí, tenemos cobertura en todo el país. Las instalaciones se realizan a través de nuestra red de instaladores, distribuidos en varias provincias. Escribinos al 0800 122 0789, o por WhatsApp al +54 9 11 3247-5460 o al (011) 15-5815-5948." },
   { q: "¿Cuánto sale el servicio?", a: "Depende de la cantidad de unidades y del tipo de equipo que necesite cada una. Escribinos por WhatsApp o dejanos los datos en el formulario y te pasamos la cotización armada para tu caso." }
 ];
 
@@ -584,7 +584,7 @@ ${ctaFinal("¿Lo ves útil para tu operación?", "Contanos cuántas unidades ten
 const contactoBody = `
 ${phero("ruta-noche", "Vista aérea nocturna de una ciudad con el tránsito iluminado", "Contacto",
   "Hablemos de tu operación.",
-  "Casa central en Buenos Aires y sucursal en Córdoba, con un 0800 gratuito para todo el país. Elegí el canal que te quede más cómodo.")}
+  "Cobertura en todo el país, con una red de instaladores distribuida en varias provincias y un 0800 gratuito. Elegí el canal que te quede más cómodo.")}
 
 ${ctaFinal("Contanos de tu operación y armamos la propuesta.", "Cuantos más datos nos dejes sobre la cantidad de unidades y el tipo de vehículo o activo, más precisa sale la cotización.")}
 
@@ -633,7 +633,7 @@ const PAGES = [
   {
     file: "contacto.html", active: "contacto.html", body: contactoBody,
     title: "Contacto | Satelital Oeste — 0800 122 0789",
-    desc: "Contactate con Satelital Oeste: 0800 122 0789, WhatsApp y correo comercial y técnico. Casa central en Buenos Aires y sucursal en Córdoba."
+    desc: "Contactate con Satelital Oeste: 0800 122 0789, WhatsApp y correo comercial y técnico. Cobertura en todo el país con red de instaladores en varias provincias."
   }
 ];
 

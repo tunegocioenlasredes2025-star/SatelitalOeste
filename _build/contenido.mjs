@@ -53,7 +53,7 @@ export const banda = `
   <div class="wrap">
     <p class="eyebrow rv">Cómo trabajamos</p>
     <h2 class="rv rv-d1">La unidad se mueve. El mapa la sigue.</h2>
-    <p class="lead rv rv-d2">Casa central en Buenos Aires y sucursal en Córdoba, con un 0800 gratuito para todo el país. Lo que cambia de un cliente a otro es el equipo que se instala, no la forma de mirarlo.</p>
+    <p class="lead rv rv-d2">Cobertura en todo el país: las instalaciones se hacen a través de nuestra red de instaladores, distribuida en varias provincias. Lo que cambia de un cliente a otro es el equipo que se instala, no la forma de mirarlo.</p>
   </div>
 </section>`;
 
