@@ -420,7 +420,7 @@ ${phero("flotas", "Camiones circulando por una autopista de varios carriles", "M
       <p class="lead">Sistema de acceso público, totalmente didáctico e intuitivo. Aplicado al transporte de pasajeros, le da a la empresa y al usuario una herramienta de suma utilidad para hacer más eficiente el servicio.</p>
     </div>
     ${fig("transporte", "Colectivo urbano avanzando por una avenida al anochecer", "Transporte de pasajeros · vista pública del recorrido")}
-    ${applist(["Vista pública del recorrido para el pasajero", "Control operativo de la frecuencia real", "Registro del cumplimiento de cada ramal", "Menos reclamos por espera a ciegas"])}
+    ${applist(["Vista pública del recorrido para el pasajero", "El pasajero ve dónde viene la unidad, sin llamar ni preguntar", "Menos reclamos por espera a ciegas"])}
     ${pnext([
       { k: "Siguiente", t: "Seguimiento de activos", h: "localizacion-activos.html" },
       { k: "Siguiente", t: "Rastreo de personas", h: "rastreo-de-personas.html" }
