@@ -159,13 +159,14 @@ const COSTOS = [
 const RASGOS = [
   { t: "Mapa a pantalla completa, en vivo", p: "Toda la operación en una sola vista, actualizada al instante. La gestión se hace mirando, no llamando." },
   { t: "Estado del motor y de la batería", p: "Encendido y apagado del vehículo, y el estado de su batería. Las entradas y salidas del equipo reportan información del vehículo, no solamente la posición en el mapa." },
-  { t: "Alarma automática y botón de pánico", p: "El dispositivo envía la alerta solo ante una eventualidad, y la persona también puede dispararla con un botón." },
+  { t: "Cinco alarmas, no una luz genérica", p: "Corte y reposición de alimentación, exceso de velocidad, entrada y salida de geocerca, encendido y apagado de motor, y botón de pánico. Suenan en pantalla con un ícono de sirena, quedan en el histórico y cada una se puede configurar para que además llegue por correo." },
   { t: "Aviso por inactividad", p: "Si una unidad o una persona queda demasiado tiempo sin moverse, la plataforma lo informa." },
   { t: "Acceso web con usuario propio", p: "Cada cliente entra con su clave y ve únicamente sus unidades, desde cualquier navegador y sin instalar nada." }
 ];
 
 const PASOS = [
   { t: "Relevamiento", p: "Cuántas unidades son, qué tipo de vehículo o activo hay que equipar y qué necesitás controlar. De ahí sale la cotización, no de una lista de precios genérica." },
+  { t: "Banderas sobre el mapa", p: "Ponés íconos fijos con nombre en los puntos que te importan. En un reparto, de un golpe de vista ves si se salteó alguno." },
   { t: "Un año de histórico", p: "Los recorridos reales quedan guardados un año en nuestro servidor. El día que tenés que mirar para atrás, el dato está." },
   { t: "Instalación de los equipos", p: "Colocamos el localizador GPS en cada unidad. En activos móviles el equipo es compacto, tiene batería propia y puede ir de forma temporal." },
   { t: "Alta en la plataforma", p: "Te entregamos usuario y clave. Desde ese momento ves tus unidades en el mapa desde cualquier navegador, en tiempo real." },
