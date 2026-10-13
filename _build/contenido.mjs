@@ -19,8 +19,7 @@ export const IMG = {
   "ruta-atardecer": { ar: 21 / 9, w: [700, 1100, 1800] },
   "camiones":       { ar: 16 / 9, w: [600, 900, 1400] },
   "personal":       { ar: 16 / 9, w: [600, 900, 1400] },
-  "dashcam-app":    { ar: 768 / 1664, w: [400, 600, 800] },
-  "dashcam-ruta":   { ar: 745 / 424, w: [500, 745] }
+  "dashcam-app":    { ar: 768 / 1664, w: [400, 600, 800] }
 };
 
 export function img(name, alt, sizes, eager = false) {

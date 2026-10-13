@@ -45,5 +45,5 @@ export const RUBROS = [
   "Construcción", "Maquinaria pesada", "Servicios públicos",
   "Seguridad vial", "Agua y saneamiento", "Telecomunicaciones",
   "Distribución de electricidad", "Motos y utilitarios", "Cargas y equipaje",
-  "Personal en calle", "Mascotas"
+  "Personal en calle"
 ];

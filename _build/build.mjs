@@ -145,12 +145,12 @@ const SOLS = [
     im: "personas", alt: "Trabajador con chaleco reflectivo y casco en una obra",
     t: "Rastreo de personas", h: "rastreo-de-personas.html",
     p: "El rastreador más chico del mercado, con batería incorporada. Pensado para personal que trabaja solo, fuera de la oficina o de noche.",
-    li: ["Más chico que un celular", "Botón de alarma y aviso por inactividad", "También para mascotas y como señuelo en la carga"]
+    li: ["Más chico que un celular", "Botón de alarma y aviso por inactividad", "También como señuelo dentro de la carga"]
   }
 ];
 
 const COSTOS = [
-  { t: "Combustible y kilómetros", p: "El recorrido real de cada unidad, con hora y posición. Así los desvíos, y los kilómetros de más, dejan de ser invisibles en la factura del mes." },
+  { t: "Combustible y kilómetros", p: "El recorrido real de cada unidad, con hora y posición. Así los desvíos, y los kilómetros de más, dejan de ser invisibles en los gastos del mes." },
   { t: "Tiempos de servicio", p: "Cuánto tarda cada trabajo y cuánto tiempo estuvo la unidad detenida sin operar. Dos números que, rara vez, alguien tiene." },
   { t: "Horas adicionales", p: "La jornada de cada unidad queda registrada. Se factura y se paga lo que efectivamente se trabajó." },
   { t: "Forma de conducir", p: "El comportamiento al volante impacta directo en el mantenimiento, en la vida útil del vehículo y en el costo por kilómetro." }
@@ -176,7 +176,7 @@ const FAQ = [
   { q: "¿Sirve para cualquier tipo de vehículo?", a: "Sí. El sistema está orientado a control de flotas de vehículos, maquinaria pesada y transporte público, y también se aplica a motos, utilitarios y activos que no tienen conductor fijo." },
   { q: "¿Desde dónde veo mis unidades?", a: "Desde la plataforma web, con tu usuario y tu clave. Se entra por navegador, desde una computadora o desde el celular, sin instalar programas." },
   { q: "¿Qué pasa con los activos que no tienen batería del vehículo?", a: "Para eso están los rastreadores con batería de larga duración. Combinados con sensores de movimiento, pueden funcionar semanas sin recargarse ni conectarse a otra fuente de energía." },
-  { q: "¿Se puede rastrear personas y no solo vehículos?", a: "Sí. Es el rastreador más chico del mercado, más chico que un celular y con batería incorporada. Se usa para personal que trabaja solo o fuera de la oficina, para mascotas y como señuelo dentro de la carga." },
+  { q: "¿Se puede rastrear personas y no solo vehículos?", a: "Sí. Es el rastreador más chico del mercado, más chico que un celular y con batería incorporada. Se usa para personal que trabaja solo o fuera de la oficina, y como señuelo dentro de la carga." },
   { q: "¿Atienden fuera de Buenos Aires?", a: "Sí, tenemos cobertura en todo el país. Las instalaciones se realizan a través de nuestra red de instaladores, distribuidos en varias provincias. Escribinos al 0800 122 0789, o por WhatsApp al +54 9 11 3247-5460 o al (011) 15-5815-5948." },
   { q: "¿Cuánto sale el servicio?", a: "Depende de la cantidad de unidades y del tipo de equipo que necesite cada una. Escribinos por WhatsApp o dejanos los datos en el formulario y te pasamos la cotización armada para tu caso." }
 ];
@@ -404,7 +404,7 @@ ${phero("flotas", "Camiones circulando por una autopista de varios carriles", "M
     <div class="head rv">
       <p class="eyebrow eyebrow--ink">Maquinaria pesada</p>
       <h2>Una máquina parada cuesta lo mismo que una trabajando.</h2>
-      <p class="lead">Las flotas de vehículos y equipos representan una inversión grande, además de los gastos de operación y mantenimiento. Las empresas que todavía no se enfocaron en maximizar la eficiencia de esos activos tienen una oportunidad concreta de mejorar su productividad.</p>
+      <p class="lead">Las flotas de vehículos y equipos representan una inversión grande, además de los gastos de operación y mantenimiento. Las empresas que todavía no se enfocaron en maximizar la eficiencia de esos activos, tienen una oportunidad concreta de mejorar su productividad.</p>
     </div>
     <div class="gains">
       ${GANANCIAS.map((g, i) => `<article class="gain rv"><span class="n">0${i + 1}</span><b>${g.b}</b><p>${g.p}</p></article>`).join("")}
@@ -457,7 +457,7 @@ ${phero("activos", "Vista aérea de un camión avanzando por una ruta entre el m
       <p class="eyebrow">Dónde se aplica</p>
       <h2 style="font-size:clamp(1.5rem,4vw,2.1rem)">Activos que hoy se pierden de vista</h2>
     </div>
-    ${applist(["Monitoreo de vehículos en alquiler y alarmas inalámbricas", "Rastreo satelital de mascotas", "Rastreo de motocicletas", "Seguimiento y monitoreo de equipaje", "Cuidado infantil", "Monitoreo de conductores adolescentes"])}
+    ${applist(["Monitoreo de vehículos en alquiler y alarmas inalámbricas", "Rastreo de motocicletas", "Seguimiento y monitoreo de equipaje", "Cuidado infantil", "Monitoreo de conductores adolescentes"])}
 
     ${pnext([
       { k: "Ver también", t: "Manejo de flotas", h: "manejo-de-flotas.html" },
@@ -501,7 +501,7 @@ ${phero("personas", "Trabajador con chaleco reflectivo y casco en una obra", "Ra
     <div class="head rv" style="margin-top:3.2rem">
       <p class="eyebrow">Otros usos</p>
       <h2 style="font-size:clamp(1.5rem,4vw,2.1rem)">El mismo equipo, otras necesidades</h2>
-      <p class="lead">Por su tamaño y su batería, el rastreador de personas también se aplica a la localización de mascotas y como señuelo dentro de la carga.</p>
+      <p class="lead">Por su tamaño y su batería, el rastreador de personas también se usa como señuelo dentro de la carga.</p>
     </div>
 
     ${pnext([
@@ -529,7 +529,17 @@ ${phero("camiones", "Camiones y utilitarios circulando por una autopista", "Vide
       <p class="lead">Se instala una sola vez, pegado al parabrisas. No hay que sumar un GPS por separado ni pagar dos servicios: la cámara reporta la posición igual que un equipo de rastreo, y además graba.</p>
     </div>
 
-    ${fig("dashcam-ruta", "Vista en vivo de la cámara frontal, con fecha, posición y velocidad sobre la imagen", "Cámara frontal en vivo · cada cuadro queda con fecha, hora, posición y velocidad")}
+    <figure class="fig rv">
+      <div class="marco">
+        <video poster="assets/img/dashcam-poster.webp" autoplay muted loop playsinline preload="none"
+               width="752" height="432" style="display:block;width:100%;height:auto"
+               aria-label="Video en vivo de la cámara frontal y la cámara de cabina en la plataforma">
+          <source src="assets/img/dashcam-demo.webm" type="video/webm">
+          <source src="assets/img/dashcam-demo.mp4" type="video/mp4">
+        </video>
+      </div>
+      <figcaption>La plataforma, con las dos cámaras en vivo · cada cuadro queda con fecha, hora, posición y velocidad</figcaption>
+    </figure>
 
     <div class="head rv" style="margin-top:3.2rem">
       <p class="eyebrow">Dos modelos</p>
@@ -619,7 +629,7 @@ const PAGES = [
   {
     file: "localizacion-activos.html", active: "localizacion-activos.html", body: activosBody,
     title: "Seguimiento y localización de activos móviles | Satelital Oeste",
-    desc: "Rastreadores compactos con batería de larga duración y sensor de movimiento para motos, cargas, equipaje, vehículos en alquiler y mascotas. Alertas de movimiento en tiempo real."
+    desc: "Rastreadores compactos con batería de larga duración y sensor de movimiento para motos, cargas, equipaje y vehículos en alquiler. Alertas de movimiento en tiempo real."
   },
   {
     file: "rastreo-de-personas.html", active: "rastreo-de-personas.html", body: personasBody,
