@@ -122,7 +122,7 @@ export const phero = (name, alt, crumb, h1, lead) => `
 <section class="phero">
   ${fondo(name, alt, true)}
   <div class="wrap">
-    <p class="crumb"><a href="index.html">Inicio</a> / ${crumb}</p>
+    <p class="crumb"><a href="/">Inicio</a> / ${crumb}</p>
     <h1>${h1}</h1>
     <p class="lead">${lead}</p>
   </div>

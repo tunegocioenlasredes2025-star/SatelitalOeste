@@ -127,7 +127,7 @@ const SOLS = [
     im: "flotas", alt: "Camiones circulando por una autopista de varios carriles",
     t: "Manejo de flotas", h: "manejo-de-flotas.html",
     p: "La operación completa en un mapa a pantalla completa, para saber en cada instante qué pasa con cada vehículo y ajustar sobre la marcha.",
-    li: ["Recorridos y posición en tiempo real", "Estado del vehículo y del conductor", "Taxis, distribución, logística y servicios públicos"]
+    li: ["Recorridos y posición en tiempo real", "Consumo de combustible y excesos de velocidad", "Taxis, distribución, logística y servicios públicos"]
   },
   {
     im: "transporte", alt: "Colectivo urbano avanzando por una avenida al anochecer",
@@ -158,7 +158,7 @@ const COSTOS = [
 
 const RASGOS = [
   { t: "Mapa a pantalla completa, en vivo", p: "Toda la operación en una sola vista, actualizada al instante. La gestión se hace mirando, no llamando." },
-  { t: "Estado del vehículo y del conductor", p: "Las entradas y salidas del equipo reportan información del vehículo, no solamente la posición en el mapa." },
+  { t: "Consumo de combustible y excesos de velocidad", p: "Las entradas y salidas del equipo reportan información del vehículo, no solamente la posición en el mapa." },
   { t: "Alarma automática y botón de pánico", p: "El dispositivo envía la alerta solo ante una eventualidad, y la persona también puede dispararla con un botón." },
   { t: "Aviso por inactividad", p: "Si una unidad o una persona queda demasiado tiempo sin moverse, la plataforma lo informa." },
   { t: "Acceso web con usuario propio", p: "Cada cliente entra con su clave y ve únicamente sus unidades, desde cualquier navegador y sin instalar nada." }
@@ -186,7 +186,7 @@ const indexBody = `
   <div class="bg-grid"></div>
   <div class="wrap hero-in">
     <div>
-      <p class="eyebrow rv">Buenos Aires y Córdoba</p>
+      <p class="eyebrow rv">Cobertura nacional e internacional</p>
       <h1 class="rv rv-d1">Dónde está cada unidad, <span class="hl">ahora mismo</span>.</h1>
       <p class="lead rv rv-d2">Rastreo y seguimiento en tiempo real para flotas, maquinaria pesada, transporte público, activos móviles y personas. Equipos instalados, plataforma propia y soporte técnico de este lado del teléfono.</p>
       <div class="btns rv rv-d3">
@@ -195,7 +195,7 @@ const indexBody = `
       </div>
       <ul class="hero-trust rv rv-d4">
         <li><span>Centro de atención</span><b>${SITE.tel0800}</b></li>
-        <li><span>Cobertura</span><b>Buenos Aires y Córdoba</b></li>
+        <li><span>Cobertura</span><b>Nacional e internacional</b></li>
         <li><span>Plataforma</span><b>Acceso web para clientes</b></li>
       </ul>
     </div>
@@ -606,7 +606,7 @@ ${ctaFinal("Contanos de tu operación y armamos la propuesta.", "Cuantos más da
 /* ---------------- escritura ---------------- */
 const PAGES = [
   {
-    file: "index.html", active: "index.html", body: indexBody, extraHead: estilosMapa,
+    file: "index.html", active: "/", body: indexBody, extraHead: estilosMapa,
     title: "Satelital Oeste | Rastreo satelital GPS en tiempo real para flotas y personas",
     desc: "Rastreo y seguimiento satelital en tiempo real: control de flotas de vehículos, maquinaria pesada, transporte público, activos móviles y personas. Buenos Aires y Córdoba. 0800 122 0789."
   },

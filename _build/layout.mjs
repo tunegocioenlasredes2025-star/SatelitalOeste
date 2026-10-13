@@ -31,9 +31,8 @@ function header(active) {
   return `
 <header class="hdr">
   <div class="wrap bar">
-    <a class="logo" href="index.html" aria-label="Satelital Oeste — inicio">
-      ${marca("h")}
-      <span class="txt"><span class="n">Satelital Oeste</span><span class="t">Seguimiento en tiempo real</span></span>
+    <a class="logo" href="/" aria-label="Satelital Oeste — inicio">
+      <img class="logo-img" src="assets/img/logo-320.webp" srcset="assets/img/logo-320.webp 320w, assets/img/logo-480.webp 480w, assets/img/logo-640.webp 640w" sizes="190px" width="640" height="394" alt="Satelital Oeste — seguimiento en tiempo real">
     </a>
     <nav class="nav" aria-label="Principal">${links}</nav>
     <div class="hdr-cta">
@@ -63,7 +62,7 @@ function footer() {
   <div class="wrap">
     <div class="ftr-top">
       <div class="ftr-brand">
-        <a class="logo" href="index.html" aria-label="Satelital Oeste">
+        <a class="logo" href="/" aria-label="Satelital Oeste">
           ${marca("f")}
           <span class="txt"><span class="n">Satelital Oeste</span><span class="t">Seguimiento en tiempo real</span></span>
         </a>
@@ -88,9 +87,9 @@ function footer() {
         <div>
           <h4>Sitio</h4>
           <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="index.html#plataforma">La plataforma</a></li>
-            <li><a href="index.html#preguntas">Preguntas frecuentes</a></li>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/#plataforma">La plataforma</a></li>
+            <li><a href="/#preguntas">Preguntas frecuentes</a></li>
             <li><a href="contacto.html">Contacto</a></li>
             <li><a href="${SITE.plataforma}" target="_blank" rel="noopener">Acceso a clientes</a></li>
           </ul>

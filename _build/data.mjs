@@ -30,7 +30,7 @@ export const SITE = {
 };
 
 export const NAV = [
-  { t: "Inicio", s: "Inicio", h: "index.html" },
+  { t: "Inicio", s: "Inicio", h: "/" },
   { t: "Manejo de flotas", s: "Flotas", h: "manejo-de-flotas.html" },
   { t: "Seguimiento de activos", s: "Activos", h: "localizacion-activos.html" },
   { t: "Rastreo de personas", s: "Personas", h: "rastreo-de-personas.html" },
