@@ -21,6 +21,8 @@ export const SITE = {
   telBsAs: "(011) 15-5815-5948",
   telBsAsHref: "tel:+5491158155948",
   wa: "5491132475460",
+  // segundo WhatsApp: Claudio
+  wa2: "5491158155948",
   mailInfo: "info@satelitaloeste.com.ar",
   mailContacto: "contacto@satelitaloeste.com.ar",
   mailTecnica: "tecnica@satelitaloeste.com.ar",

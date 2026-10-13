@@ -92,12 +92,13 @@ export const ctaFinal = (titulo, texto) => `
         <div class="canal">
           <a href="${SITE.tel0800Href}"><span class="k">Centro de atención</span><span class="v">${SITE.tel0800}</span>${ICO.flecha}</a>
           <a href="${waLink("Hola Satelital Oeste, quiero una cotización del servicio de rastreo satelital.")}" target="_blank" rel="noopener"><span class="k">WhatsApp</span><span class="v">${SITE.telWa}</span>${ICO.flecha}</a>
+          <a href="https://wa.me/${SITE.wa2}?text=${encodeURIComponent("Hola Satelital Oeste, quiero una cotización del servicio de rastreo satelital.")}" target="_blank" rel="noopener"><span class="k">WhatsApp</span><span class="v">${SITE.telBsAs}</span>${ICO.flecha}</a>
           <a href="mailto:${SITE.mailContacto}"><span class="k">Consultas comerciales</span><span class="v">${SITE.mailContacto}</span>${ICO.flecha}</a>
           <a href="mailto:${SITE.mailTecnica}"><span class="k">Soporte técnico</span><span class="v">${SITE.mailTecnica}</span>${ICO.flecha}</a>
         </div>
         <ul class="branch">
-          <li><span>Casa central</span><b>Buenos Aires</b><p><a href="${SITE.telWaHref}">${SITE.telWa}</a></p></li>
-          <li><span>Sucursal</span><b>Córdoba</b><p><a href="${SITE.tel0800Href}">${SITE.tel0800}</a></p></li>
+          <li><span>Casa central</span><b>Buenos Aires</b></li>
+          <li><span>Sucursal</span><b>Córdoba</b></li>
         </ul>
       </div>
     </div>
