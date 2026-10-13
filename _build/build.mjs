@@ -150,8 +150,8 @@ const SOLS = [
 ];
 
 const COSTOS = [
-  { t: "Combustible y kilómetros", p: "Recorrido real contra recorrido previsto. Los desvíos y los kilómetros de más dejan de ser invisibles en la factura del mes." },
-  { t: "Tiempos de servicio", p: "Cuánto tarda cada trabajo y cuánto tiempo estuvo la unidad detenida sin operar. Dos números que rara vez alguien tiene." },
+  { t: "Combustible y kilómetros", p: "El recorrido real de cada unidad, con hora y posición. Así los desvíos, y los kilómetros de más, dejan de ser invisibles en la factura del mes." },
+  { t: "Tiempos de servicio", p: "Cuánto tarda cada trabajo y cuánto tiempo estuvo la unidad detenida sin operar. Dos números que, rara vez, alguien tiene." },
   { t: "Horas adicionales", p: "La jornada de cada unidad queda registrada. Se factura y se paga lo que efectivamente se trabajó." },
   { t: "Forma de conducir", p: "El comportamiento al volante impacta directo en el mantenimiento, en la vida útil del vehículo y en el costo por kilómetro." }
 ];
@@ -210,7 +210,7 @@ ${ticker}
   <div class="wrap">
     <div class="head rv">
       <p class="eyebrow">El punto</p>
-      <h2>Una flota que no se mide se termina pagando de más.</h2>
+      <h2>En una flota que no se controla, se termina gastando de más.</h2>
       <p class="lead">Combustible, horas extras, desvíos y tiempos muertos no aparecen en ninguna planilla hasta que alguien los mide. Un localizador GPS convierte esa zona gris en información concreta.</p>
     </div>
     <div class="punto">
