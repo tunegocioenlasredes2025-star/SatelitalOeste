@@ -166,6 +166,7 @@ const RASGOS = [
 
 const PASOS = [
   { t: "Relevamiento", p: "Cuántas unidades son, qué tipo de vehículo o activo hay que equipar y qué necesitás controlar. De ahí sale la cotización, no de una lista de precios genérica." },
+  { t: "Un año de histórico", p: "Los recorridos reales quedan guardados un año en nuestro servidor. El día que tenés que mirar para atrás, el dato está." },
   { t: "Instalación de los equipos", p: "Colocamos el localizador GPS en cada unidad. En activos móviles el equipo es compacto, tiene batería propia y puede ir de forma temporal." },
   { t: "Alta en la plataforma", p: "Te entregamos usuario y clave. Desde ese momento ves tus unidades en el mapa desde cualquier navegador, en tiempo real." },
   { t: "Soporte técnico", p: "Quedás con línea directa: el 0800, WhatsApp y una casilla técnica exclusiva para lo que aparezca después de la instalación." }
@@ -371,7 +372,7 @@ const GANANCIAS = [
   { b: "Optimizar los tiempos de servicio", p: "Saber cuánto tarda realmente cada trabajo y comparar entre equipos y entre obras." },
   { b: "Disminuir los tiempos de inactividad", p: "Detectar las horas en las que la máquina estuvo encendida sin producir." },
   { b: "Reducir la facturación de horas adicionales", p: "La jornada de cada equipo queda registrada. Se factura lo que se trabajó." },
-  { b: "Reducir kilómetros y combustible", p: "Recorridos reales contra recorridos previstos, para cortar el desvío antes de que sea costumbre." },
+  { b: "Reducir kilómetros y combustible", p: "El recorrido real de cada equipo, con hora y posición punto por punto, para ver desvíos y vueltas repetidas." },
   { b: "Bajar gastos de comunicaciones", p: "Menos llamadas para preguntar dónde está la máquina y en qué estado quedó." },
   { b: "Reducir gastos de personal", p: "Una misma persona puede coordinar más equipos cuando los ve a todos en el mismo mapa." }
 ];
