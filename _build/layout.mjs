@@ -63,8 +63,7 @@ function footer() {
     <div class="ftr-top">
       <div class="ftr-brand">
         <a class="logo" href="/" aria-label="Satelital Oeste">
-          ${marca("f")}
-          <span class="txt"><span class="n">Satelital Oeste</span><span class="t">Seguimiento en tiempo real</span></span>
+          <img class="logo-img" src="assets/img/logo-320.webp" srcset="assets/img/logo-320.webp 320w, assets/img/logo-480.webp 480w, assets/img/logo-640.webp 640w" sizes="190px" width="640" height="109" alt="Satelital Oeste — seguimiento en tiempo real">
         </a>
         <p>Rastreo satelital y desarrollo de soluciones informáticas. Control de flotas, maquinaria pesada, transporte público, activos móviles y personas.</p>
         <div class="ftr-soc">
