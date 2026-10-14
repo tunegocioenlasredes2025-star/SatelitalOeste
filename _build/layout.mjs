@@ -148,6 +148,14 @@ export function page({ file, title, desc, active, body, extraHead = "" }) {
 <link rel="stylesheet" href="assets/css/site.css?v=${V}">
 <link rel="stylesheet" href="assets/css/blocks.css?v=${V}">
 ${extraHead}<script type="application/ld+json">${schema()}</script>
+<!-- Etiqueta de Google (Google Ads / GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MNME0C2B6V"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MNME0C2B6V');
+</script>
 </head>
 <body>
 <div id="pre"><div class="in"><div class="mark">${marca("p")}</div><div class="bar"></div><div class="lbl">Conectando</div></div></div>
